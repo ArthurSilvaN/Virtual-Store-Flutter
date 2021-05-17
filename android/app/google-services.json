@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "142076428745",
+    "firebase_url": "https://loja-flutter-386b4-default-rtdb.firebaseio.com",
+    "project_id": "loja-flutter-386b4",
+    "storage_bucket": "loja-flutter-386b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:142076428745:android:9b77a04f2c3009c1fe6818",
+        "android_client_info": {
+          "package_name": "arthur.com.br.loja_virtualflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "142076428745-9p9nsgtkhfpljdon5rg9k8on35cme0cn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5LWqhadciV1uTLWFCUmFqoz19--5bM7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "142076428745-9p9nsgtkhfpljdon5rg9k8on35cme0cn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "142076428745-gtlqoppumodcgjj7t6so9luhv9s3ikb8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "arthur.com.br.projetospessoais"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
