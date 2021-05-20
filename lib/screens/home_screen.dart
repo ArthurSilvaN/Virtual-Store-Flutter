@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loja_virtualflutter/Tabs/home_tab.dart';
-import 'package:loja_virtualflutter/screens/products_tab.dart';
+import 'package:loja_virtualflutter/tabs/products_tab.dart';
 import 'package:loja_virtualflutter/widgets/custom_drawer.dart';
 
 class HomeScreen extends  StatelessWidget {
