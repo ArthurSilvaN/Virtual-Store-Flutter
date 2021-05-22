@@ -1,6 +1,14 @@
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:loja_virtualflutter/data/cart_product_data.dart';
 import 'package:loja_virtualflutter/data/product_data.dart';
+import 'package:loja_virtualflutter/models/cart_model.dart';
+import 'package:loja_virtualflutter/models/user_model.dart';
+import 'package:loja_virtualflutter/screens/login_screen.dart';
+import 'package:loja_virtualflutter/widgets/cart_button.dart';
+
+import 'cart_screen.dart';
 
 class ProductScreen extends StatefulWidget {
   final ProductData product;
@@ -21,6 +29,7 @@ class _ProductScreenState extends State<ProductScreen> {
   Widget build(BuildContext context) {
     final Color primaryColor = Theme.of(context).primaryColor;
     return Scaffold(
+      floatingActionButton: CartButton(),
       appBar: AppBar(
         title: Text(product.title),
         centerTitle: true,
@@ -109,9 +118,29 @@ class _ProductScreenState extends State<ProductScreen> {
                  // ignore: deprecated_member_use
                  child: RaisedButton(
                    onPressed: size != null ?
-                   (){}: null,
+                   (){
+                     if(UserModel.of(context).isLoggedIn()){
+                       CartProduct cartProduct = CartProduct();
+                       cartProduct.size = size;
+                       cartProduct.quantity = 1;
+                       cartProduct.pid = product.id;
+                       cartProduct.catergory = product.category;
+
+                       CartModel.of(context).addCartItem(cartProduct);
+
+                       Navigator.of(context).push(
+                           MaterialPageRoute(builder: (context) => CartScreen()
+                           )
+                       );
+
+                     }else{
+                       Navigator.of(context).push(
+                         MaterialPageRoute(builder: (context) => LoginScreen())
+                       );
+                     }
+                   } : null,
                    child: Text(
-                     "Adicionar ao Carrinho",
+                     UserModel.of(context).isLoggedIn() ? "Adicionar ao Carrinho" : "Entre para Comprar",
                      style: TextStyle(fontSize: 18.0),
                    ),
                    color: primaryColor,
