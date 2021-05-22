@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_virtualflutter/data/product_data.dart';
 import 'package:loja_virtualflutter/tiles/product_tile.dart';
+import 'package:loja_virtualflutter/widgets/cart_button.dart';
 
 class CategoryScreen extends StatelessWidget {
   final QueryDocumentSnapshot snapshot;
@@ -14,6 +15,7 @@ class CategoryScreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        floatingActionButton: CartButton(),
           appBar: AppBar(
             title: Text(snapshot.data()["title"]),
             centerTitle: true,
@@ -53,7 +55,9 @@ class CategoryScreen extends StatelessWidget {
                       ),
                       itemCount: snapshot.data.docs.length,
                       itemBuilder: (context, index){
-                        return ProductTile("grid", ProductData.fromDocument(snapshot.data.docs[index]));
+                        ProductData data = ProductData.fromDocument(snapshot.data.docs[index]);
+                        data.category = this.snapshot.id;
+                        return ProductTile("grid", data);
                       },
                     ),
                     ListView.builder(
