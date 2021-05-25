@@ -3,7 +3,7 @@ import 'package:loja_virtualflutter/data/product_data.dart';
 
 class CartProduct{
   String cid;
-  String catergory;
+  String category;
   String pid;
   int quantity;
   String size;
@@ -13,7 +13,7 @@ class CartProduct{
 
   CartProduct.fromDocument(DocumentSnapshot documentSnapshot){
     cid = documentSnapshot.id;
-    catergory = documentSnapshot.data()["Category"];
+    category = documentSnapshot.data()["category"];
     pid = documentSnapshot.data()["pid"];
     quantity = documentSnapshot.data()["quantity"];
     size = documentSnapshot.data()["size"];
@@ -21,7 +21,7 @@ class CartProduct{
 
   Map<String, dynamic> toMap(){
     return{
-      "category": catergory,
+      "category": category,
       "pid": pid,
       "quantity": quantity,
       "size": size,
