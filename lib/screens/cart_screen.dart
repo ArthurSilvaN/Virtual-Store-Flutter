@@ -3,18 +3,23 @@ import 'package:loja_virtualflutter/models/cart_model.dart';
 import 'package:loja_virtualflutter/models/user_model.dart';
 import 'package:loja_virtualflutter/screens/login_screen.dart';
 import 'package:loja_virtualflutter/tiles/cart_tile.dart';
+import 'package:loja_virtualflutter/widgets/cart_price.dart';
+import 'package:loja_virtualflutter/widgets/discount_card.dart';
+import 'package:loja_virtualflutter/widgets/ship_card.dart';
 import 'package:scoped_model/scoped_model.dart';
+
+import 'order_screen.dart';
 
 class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Meu carrinho"),
-        actions: [
+        title: Text("Meu Carrinho"),
+        actions: <Widget>[
           Container(
-            alignment: Alignment.center,
             padding: EdgeInsets.only(right: 8.0),
+            alignment: Alignment.center,
             child: ScopedModelDescendant<CartModel>(
               builder: (context, child, model) {
                 int p = model.products.length;
@@ -28,7 +33,6 @@ class CartScreen extends StatelessWidget {
         ],
       ),
       body: ScopedModelDescendant<CartModel>(
-        // ignore: missing_return
         builder: (context, child, model) {
           if (model.isLoading && UserModel.of(context).isLoggedIn()) {
             return Center(
@@ -45,6 +49,15 @@ class CartScreen extends StatelessWidget {
                     Icons.remove_shopping_cart,
                     size: 80.0,
                     color: Theme.of(context).primaryColor,
+                  ),
+                  SizedBox(
+                    height: 16.0,
+                  ),
+                  Text(
+                    "Faça o login para adicionar produtos!",
+                    style:
+                        TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,
                   ),
                   SizedBox(
                     height: 16.0,
@@ -73,15 +86,22 @@ class CartScreen extends StatelessWidget {
               ),
             );
           } else {
-            ListView(
-              children: [
+            return ListView(
+              children: <Widget>[
                 Column(
-                  children: model.products.map(
-                      (product){
-                        return CartTile(product);
-                      }
-                  ).toList(),
-                )
+                  children: model.products.map((product) {
+                    return CartTile(product);
+                  }).toList(),
+                ),
+                DiscountCard(),
+                ShipCard(),
+                CartPrice(() async {
+                  String orderId = await model.finishOrder();
+                  if(orderId != null)
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => OrderScreen(orderId))
+                    );
+                }),
               ],
             );
           }
