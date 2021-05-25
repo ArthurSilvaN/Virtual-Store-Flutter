@@ -87,11 +87,10 @@ class CartTile extends StatelessWidget {
                     .collection("intems")
                     .doc(cartProduct.pid)
                     .get(),
-                // ignore: missing_return
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    cartProduct.productData =
-                        ProductData.fromDocument(snapshot.data);
+                    cartProduct.productData = ProductData.fromDocument(snapshot.data);
+                    return _buildContent();
                   } else {
                     return Container(
                       height: 70.0,
