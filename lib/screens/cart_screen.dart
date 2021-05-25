@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:loja_virtualflutter/models/cart_model.dart';
 import 'package:loja_virtualflutter/models/user_model.dart';
 import 'package:loja_virtualflutter/screens/login_screen.dart';
+import 'package:loja_virtualflutter/tiles/cart_tile.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class CartScreen extends StatelessWidget {
@@ -39,7 +40,7 @@ class CartScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: <Widget>[
                   Icon(
                     Icons.remove_shopping_cart,
                     size: 80.0,
@@ -70,6 +71,18 @@ class CartScreen extends StatelessWidget {
                 style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
                 textAlign: TextAlign.center,
               ),
+            );
+          } else {
+            ListView(
+              children: [
+                Column(
+                  children: model.products.map(
+                      (product){
+                        return CartTile(product);
+                      }
+                  ).toList(),
+                )
+              ],
             );
           }
         },
