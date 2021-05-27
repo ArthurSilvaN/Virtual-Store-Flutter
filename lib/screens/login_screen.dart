@@ -83,9 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           if (!_visible) {
                             _scaffoldKey.currentState.showSnackBar(SnackBar(
                               content: Text("Insira o email para recuperação"),
-                              backgroundColor: Theme
-                                  .of(context)
-                                  .primaryColor,
+                              backgroundColor: Theme.of(context).primaryColor,
                               duration: Duration(seconds: 2),
                             ));
                           }
@@ -103,32 +101,30 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Visibility(
                       child: Visibility(
-                        visible: _visible,
-                        child: SizedBox(
-                          height: 44.0,
-                          child: RaisedButton(
-                            child: Text(
-                              "Entrar",
-                              style: TextStyle(
-                                fontSize: 18.0,
-                              ),
-                            ),
-                            textColor: Colors.white,
-                            color: Theme
-                                .of(context)
-                                .primaryColor,
-                            onPressed: () {
-                              if (_formKey.currentState.validate()) {
-                                model.signIn(
-                                    email: _emailController.text,
-                                    pass: _passController.text,
-                                    onSucces: _onSuccess,
-                                    onFailure: _onFailure);
-                              }
-                            },
+                    visible: _visible,
+                    child: SizedBox(
+                      height: 44.0,
+                      child: RaisedButton(
+                        child: Text(
+                          "Entrar",
+                          style: TextStyle(
+                            fontSize: 18.0,
                           ),
                         ),
-                      )),
+                        textColor: Colors.white,
+                        color: Theme.of(context).primaryColor,
+                        onPressed: () {
+                          if (_formKey.currentState.validate()) {
+                            model.signIn(
+                                email: _emailController.text,
+                                pass: _passController.text,
+                                onSucces: _onSuccess,
+                                onFailure: _onFailure);
+                          }
+                        },
+                      ),
+                    ),
+                  )),
                   AnimatedOpacity(
                     opacity: !_visible ? 1.0 : 0.0,
                     duration: Duration(milliseconds: 500),
@@ -157,9 +153,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               model.recoverPass(_emailController.text);
                               _scaffoldKey.currentState.showSnackBar(SnackBar(
                                 content: Text("Confira seu email!"),
-                                backgroundColor: Theme
-                                    .of(context)
-                                    .primaryColor,
+                                backgroundColor: Theme.of(context).primaryColor,
                                 duration: Duration(seconds: 2),
                               ));
                             }
@@ -172,19 +166,18 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             );
           },
-        )
-    );
+        ));
   }
-    void _onSuccess() {
-      Navigator.of(context).pop();
-    }
 
-    void _onFailure() {
-      _scaffoldKey.currentState.showSnackBar(SnackBar(
-        content: Text("Falha ao entrar!"),
-        backgroundColor: Colors.red,
-        duration: Duration(seconds: 2),
-      ));
-    }
+  void _onSuccess() {
+    Navigator.of(context).pop();
+  }
 
+  void _onFailure() {
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text("Falha ao entrar!"),
+      backgroundColor: Colors.red,
+      duration: Duration(seconds: 2),
+    ));
+  }
 }
