@@ -1,14 +1,18 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:loja_virtualflutter/data/cart_product_data.dart';
 import 'package:loja_virtualflutter/models/user_model.dart';
 import 'package:loja_virtualflutter/services/result_cep.dart';
 import 'package:scoped_model/scoped_model.dart';
+import 'package:correios_frete/correios_frete.dart';
 
 class CartModel extends Model{
   UserModel user;
   bool isLoading = false;
   String address;
+  String endCep;
 
   List<CartProduct> products = [];
 
@@ -40,10 +44,12 @@ class CartModel extends Model{
 
     final resultCep = await ViaCepService.fetchCep(cep: cep);
 
+    this.endCep = resultCep.cep;
+
     String address = "${resultCep.logradouro}, ${resultCep.bairro} - ${resultCep
         .localidade} - ${resultCep.uf}";
 
-    if(resultCep != null) {
+    if(resultCep != null){
       Map<String, dynamic> userData = {
         "address": address
       };
@@ -55,8 +61,13 @@ class CartModel extends Model{
       isLoading = false;
       return address;
     }else{
-      isLoading = false;
-      return "Cep Invalido";
+      Map<String, dynamic> userData = {
+        "address": "null"
+      };
+
+      FirebaseFirestore.instance.collection("users")
+          .doc(user.firebaseUser.uid)
+          .update(userData);
     }
   }
 
@@ -88,7 +99,7 @@ class CartModel extends Model{
     return getProductsPrice() * discountPercentage / 100;
   }
 
-  double getShipPrice(){
+  double getShipPrice() {
     return 9.99;
   }
 
