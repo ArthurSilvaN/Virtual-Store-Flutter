@@ -31,7 +31,7 @@ class CartTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  cartProduct.productData.title,
+                  cartProduct.productData.title + " - TAMANHO ${cartProduct.size}",
                   style: TextStyle(fontWeight: FontWeight.w400, fontSize: 17.0),
                 ),
                 Text(
