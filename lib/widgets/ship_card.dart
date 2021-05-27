@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_virtualflutter/models/cart_model.dart';
 
 class ShipCard extends StatelessWidget {
   @override
@@ -25,6 +26,7 @@ class ShipCard extends StatelessWidget {
               ),
               initialValue: "",
               onFieldSubmitted: (text){
+                CartModel.of(context).searchCep(text);
               },
             ),
           )
