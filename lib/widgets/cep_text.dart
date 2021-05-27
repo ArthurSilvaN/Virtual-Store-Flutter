@@ -17,13 +17,30 @@ class CepText extends StatelessWidget {
                 .snapshots(),
             builder: (context, snapshot) {
               {
-                return Column(
-                  children: [
-                    Icon(Icons.location_on),
-                    Text("\n${snapshot.data["address"]}"),
-                    Divider()
-                  ],
-                );
+                String cep = snapshot.data["address"];
+                if (cep == "null, null - null - null") {
+                  return Column(
+                    children: [
+                      Icon(
+                        Icons.location_on,
+                        color: Colors.redAccent,
+                      ),
+                      Text(
+                        "\nCPF INVÁLIDO",
+                        style: TextStyle(color: Colors.red),
+                      ),
+                      Divider()
+                    ],
+                  );
+                } else {
+                  return Column(
+                    children: [
+                      Icon(Icons.location_on),
+                      Text("\n${cep}"),
+                      Divider()
+                    ],
+                  );
+                }
               }
             }));
   }
