@@ -4,6 +4,7 @@ import 'package:loja_virtualflutter/models/user_model.dart';
 import 'package:loja_virtualflutter/screens/login_screen.dart';
 import 'package:loja_virtualflutter/tiles/cart_tile.dart';
 import 'package:loja_virtualflutter/widgets/cart_price.dart';
+import 'package:loja_virtualflutter/widgets/cep_text.dart';
 import 'package:loja_virtualflutter/widgets/discount_card.dart';
 import 'package:loja_virtualflutter/widgets/ship_card.dart';
 import 'package:scoped_model/scoped_model.dart';
@@ -95,6 +96,8 @@ class CartScreen extends StatelessWidget {
                 ),
                 DiscountCard(),
                 ShipCard(),
+                Divider(),
+                CepText(CartModel.of(context).user),
                 CartPrice(() async {
                   String orderId = await model.finishOrder();
                   if(orderId != null)
