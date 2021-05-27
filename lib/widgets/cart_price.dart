@@ -50,7 +50,7 @@ class CartPrice extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text("Entrega"),
-                    Text("R\$ ${ship.toStringAsFixed(2)}")
+                    Text("R\$ $ship")
                   ],
                 ),
                 Divider(),

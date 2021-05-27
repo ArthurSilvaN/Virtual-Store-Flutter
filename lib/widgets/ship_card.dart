@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:brasil_fields/brasil_fields.dart';
 import 'package:loja_virtualflutter/models/cart_model.dart';
 
 class ShipCard extends StatelessWidget {
@@ -24,9 +26,12 @@ class ShipCard extends StatelessWidget {
                   border: OutlineInputBorder(),
                   hintText: "Digite seu CEP"
               ),
-              initialValue: "",
+                inputFormatters: [
+                  FilteringTextInputFormatter.digitsOnly,
+                  CepInputFormatter(),
+                ],
               onFieldSubmitted: (text){
-                CartModel.of(context).searchCep(text);
+                CartModel.of(context).searchCep(UtilBrasilFields.removeCaracteres(text));
               },
             ),
           )
