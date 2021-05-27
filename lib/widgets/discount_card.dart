@@ -25,20 +25,21 @@ class DiscountCard extends StatelessWidget {
               border: OutlineInputBorder(),
               hintText: "Digite seu cupom"
             ),
+            textCapitalization: TextCapitalization.sentences,
             initialValue: CartModel.of(context).couponCode ?? "",
             onFieldSubmitted: (text){
-              FirebaseFirestore.instance.collection("coupons").doc(text).get().then(
+              FirebaseFirestore.instance.collection("coupons").doc(text.toUpperCase()).get().then(
                   (doc){
                     if(doc.data() != null){
-                      CartModel.of(context).setCupon(text, doc.data()["percent"]);
+                      CartModel.of(context).setCoupon(text.toUpperCase(), doc.data()["percent"]);
                       Scaffold.of(context).showSnackBar(
                         SnackBar(content:
-                        Text("CUPOM DE ${doc.data()["precent"]}% APLICADO"),
+                        Text("CUPOM DE ${doc.data()["percent"]}% APLICADO"),
                           backgroundColor: Colors.green,
                         )
                       );
                     }else {
-                      CartModel.of(context).setCupon(null, 0);
+                      CartModel.of(context).setCoupon(null, 0);
                       Scaffold.of(context).showSnackBar(
                           SnackBar(content:
                           Text("CUPOM INEXISTENTE"),
