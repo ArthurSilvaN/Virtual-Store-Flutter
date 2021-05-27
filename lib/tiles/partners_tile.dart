@@ -11,6 +11,29 @@ class PartnersTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card();
+    return Card(
+        child: StreamBuilder<DocumentSnapshot>(
+            stream: FirebaseFirestore.instance
+                .collection("partners")
+                .doc()
+                .snapshots(),
+            builder: (context, snapshot) {
+              {
+                if (!snapshot.hasData) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else {
+                  return Card(
+                    child: FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: this.snapshot.data()["image"],
+                    ),
+                    margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: 2.0),
+                  );
+                }
+              }
+            })
+    );
   }
 }
