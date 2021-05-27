@@ -2,11 +2,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:loja_virtualflutter/data/cart_product_data.dart';
 import 'package:loja_virtualflutter/models/user_model.dart';
+import 'package:loja_virtualflutter/services/result_cep.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 class CartModel extends Model{
   UserModel user;
   bool isLoading = false;
+  String address;
 
   List<CartProduct> products = [];
 
@@ -22,28 +24,53 @@ class CartModel extends Model{
       ScopedModel.of<CartModel>(context);
 
   void addCartItem(CartProduct cartProduct){
-    if(findProductsCart(cartProduct.cid) == true){
-      incProduct(cartProduct);
-    } else {
+    if(findProductsCart(cartProduct) ==  false) {
       products.add(cartProduct);
       FirebaseFirestore.instance.collection("users").doc(user.firebaseUser.uid)
           .collection("cart").add(cartProduct.toMap()).then((doc) {
         cartProduct.cid = doc.id;
       });
+      notifyListeners();
     }
-
-    notifyListeners();
   }
 
-  bool findProductsCart(String id){
-    products.firstWhere((element) {
-      if(element.cid == id){
-        return true;
-      } else return false;
-    });
+  Future<String> searchCep(String cepUser) async {
+    final cep = cepUser;
+    isLoading = true;
+
+    final resultCep = await ViaCepService.fetchCep(cep: cep);
+
+    String address = "${resultCep.logradouro}, ${resultCep.bairro} - ${resultCep
+        .localidade} - ${resultCep.uf}";
+
+    if(resultCep != null) {
+      Map<String, dynamic> userData = {
+        "address": address
+      };
+
+      FirebaseFirestore.instance.collection("users")
+          .doc(user.firebaseUser.uid)
+          .update(userData);
+
+      isLoading = false;
+      return address;
+    }else{
+      isLoading = false;
+      return "Cep Invalido";
+    }
   }
 
-  void setCupon(String coupon, int percentage){
+  bool findProductsCart(CartProduct cartProduct){
+     final index = products.indexWhere((element) => element.pid == cartProduct.pid && element.size == cartProduct.size);
+     if(index >= 0){
+       incProduct(products[index]);
+       return true;
+     } else {
+       return false;
+     }
+  }
+
+  void setCoupon(String coupon, int percentage){
     this.couponCode = coupon;
     this.discountPercentage = percentage;
   }
@@ -142,4 +169,5 @@ class CartModel extends Model{
 
     return refOrder.id;
   }
+
 }
