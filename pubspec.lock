@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  brasil_fields:
+    dependency: "direct main"
+    description:
+      name: brasil_fields
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.0"
   carousel_pro:
     dependency: "direct main"
     description:
@@ -71,6 +78,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0"
+  convert:
+    dependency: transitive
+    description:
+      name: convert
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.1"
+  correios_frete:
+    dependency: "direct main"
+    description:
+      name: correios_frete
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -268,6 +289,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.11.0"
+  petitparser:
+    dependency: transitive
+    description:
+      name: petitparser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -371,6 +399,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.0"
+  xml:
+    dependency: transitive
+    description:
+      name: xml
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.5.1"
+  xml2json:
+    dependency: transitive
+    description:
+      name: xml2json
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.4.0"
 sdks:
   dart: ">=2.12.0 <3.0.0"
   flutter: ">=1.17.0"

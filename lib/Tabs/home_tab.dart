@@ -9,8 +9,8 @@ class HomeTab extends StatelessWidget {
     Widget _builderBodyBack() => Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
-            Color.fromARGB(255, 211, 118, 130),
-            Color.fromARGB(255, 253, 181, 168),
+                Color.fromARGB(144, 84, 167, 156),
+                Color.fromARGB(255, 54, 114, 102),
           ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
         );
 
@@ -48,21 +48,20 @@ class HomeTab extends StatelessWidget {
                   );
                 else
                   return SliverStaggeredGrid.count(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 1.0,
-                      crossAxisSpacing: 1.0,
-                      staggeredTiles: snapshot.data.docs.map((doc) {
-                        return StaggeredTile.count(doc.get('x'), doc.get('y'));
-                      }).toList(),
-                      children: snapshot.data.docs.map((doc) {
-                        return
-                          FadeInImage.memoryNetwork(
-                          placeholder: kTransparentImage,
-                          image: doc.get("image"),
-                          fit: BoxFit.cover,
-                        );
-                      }).toList(),
-                    );
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 1.0,
+                    crossAxisSpacing: 1.0,
+                    staggeredTiles: snapshot.data.docs.map((doc) {
+                      return StaggeredTile.count(doc.get('x'), doc.get('y'));
+                    }).toList(),
+                    children: snapshot.data.docs.map((doc) {
+                      return FadeInImage.memoryNetwork(
+                        placeholder: kTransparentImage,
+                        image: doc.get("image"),
+                        fit: BoxFit.cover,
+                      );
+                    }).toList(),
+                  );
               },
             )
           ],

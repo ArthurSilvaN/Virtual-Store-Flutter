@@ -4,7 +4,6 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class PartnersTile extends StatelessWidget {
-
   final DocumentSnapshot snapshot;
 
   PartnersTile(this.snapshot);
@@ -12,11 +11,11 @@ class PartnersTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: StreamBuilder<DocumentSnapshot>(
-            stream: FirebaseFirestore.instance
+        child: FutureBuilder<QuerySnapshot>(
+            future: FirebaseFirestore.instance
                 .collection("partners")
-                .doc()
-                .snapshots(),
+                .orderBy("pos")
+                .get(),
             builder: (context, snapshot) {
               {
                 if (!snapshot.hasData) {
@@ -25,15 +24,29 @@ class PartnersTile extends StatelessWidget {
                   );
                 } else {
                   return Card(
-                    child: FadeInImage.memoryNetwork(
-                      placeholder: kTransparentImage,
-                      image: this.snapshot.data()["image"],
+                    child: Container(
+                      child: Stack(
+                        alignment: Alignment.bottomCenter,
+                        children: [
+                          FadeInImage.memoryNetwork(
+                            placeholder: kTransparentImage,
+                            image: this.snapshot.data()["image"],
+                          ),
+                            Text(
+                              this.snapshot.data()["title"],
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w900,
+                                letterSpacing: 0,
+                                fontSize: 25,
+                              ),
+                            ),
+                        ],
+                      ),
                     ),
-                    margin: EdgeInsets.symmetric(vertical: 2.0, horizontal: 2.0),
                   );
                 }
               }
-            })
-    );
+            }));
   }
 }

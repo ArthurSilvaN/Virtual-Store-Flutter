@@ -16,8 +16,7 @@ class CustomDrawer extends StatelessWidget {
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: [
-                    Color.fromARGB(255, 156, 201, 205),
-                    Color.fromARGB(255, 170, 238, 222),
+                    Colors.white,
                   ],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter
@@ -38,10 +37,12 @@ class CustomDrawer extends StatelessWidget {
                  height: 230.0,
                  child: Stack(
                    children: <Widget>[
-                     Align(
+                     Positioned(
+                       top: 4.0,
+                       left: 8.0,
                        child: Image.network("https://d119kxa4ljimqi.cloudfront.net/images/l/Lolja_9.png",
                        height: 150.0,
-                       alignment: Alignment.topCenter,),
+                       ),
                      ),
                      Positioned(
                        left: 0.0,
