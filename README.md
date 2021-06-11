@@ -16,12 +16,12 @@ This project is a complete webshop in flutter using firebase console.
 #### Introduction
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/39159676/121691156-10796700-ca9d-11eb-86c5-1b6621e1c594.jpeg" alt="Image Tracking List" height="500"/> <img src="https://user-images.githubusercontent.com/39159676/121691162-11aa9400-ca9d-11eb-95e7-f92cef32cca7.jpeg" alt="Home Page" height="500"/> <img src="https://user-images.githubusercontent.com/39159676/121691166-12432a80-ca9d-11eb-880f-9e822d5c88f6.jpeg" alt="Image Tracking List" height="500"/> 
+  <img src="https://user-images.githubusercontent.com/39159676/121702826-98b13980-caa8-11eb-8ec3-0c9583f46978.gif" alt="Image Tracking List" height="500"/>
 </p>
 
-
-https://user-images.githubusercontent.com/39159676/121697937-ea0afa00-caa3-11eb-91f5-ecc9293d552d.mp4
-
+<p align="center">
+<img src="https://user-images.githubusercontent.com/39159676/121691156-10796700-ca9d-11eb-86c5-1b6621e1c594.jpeg" alt="Image Tracking List" height="500"/> <img src="https://user-images.githubusercontent.com/39159676/121691162-11aa9400-ca9d-11eb-95e7-f92cef32cca7.jpeg" alt="Home Page" height="500"/> <img src="https://user-images.githubusercontent.com/39159676/121691166-12432a80-ca9d-11eb-880f-9e822d5c88f6.jpeg" alt="Image Tracking List" height="500"/> 
+</p>
 
 #### Drawer
 
@@ -48,11 +48,9 @@ https://user-images.githubusercontent.com/39159676/121697937-ea0afa00-caa3-11eb-
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/39159676/121696338-5ab11700-caa2-11eb-813f-1083093ef592.jpeg" alt="Graph Data Image" height="500"/>
+<img src="https://user-images.githubusercontent.com/39159676/121703069-d2824000-caa8-11eb-94e2-78f9fc4e3e87.gif" alt="Graph Data Image" height="500"/>
 </p>
   
-https://user-images.githubusercontent.com/39159676/121696753-c5fae900-caa2-11eb-9fcd-c9c0d162a429.mp4
-
-
 ## Technologies
 
 - Flutter
