@@ -3,47 +3,66 @@
 ### Table of Contents
 
 - [Description](#description)
-- [Functions](#functions)
-- [How To Use](#how-to-use)
+- [About Project](#about-project)
 - [Author Info](#author-info)
 
 ---
 ## Description
 
-This project is a simple API application that receives updated corona virus tacking from around the world
+This project is a complete webshop in flutter using firebase console.
 
 ## About Project
 
 #### Introduction
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/39159676/121691156-10796700-ca9d-11eb-86c5-1b6621e1c594.jpeg" alt="Image Tracking List" height="400"/> <img src="https://user-images.githubusercontent.com/39159676/121691162-11aa9400-ca9d-11eb-95e7-f92cef32cca7.jpeg" alt="Home Page" height="400"/> <img src="https://user-images.githubusercontent.com/39159676/121691166-12432a80-ca9d-11eb-880f-9e822d5c88f6.jpeg" alt="Image Tracking List" height="400"/> 
-<img src="https://user-images.githubusercontent.com/39159676/121691167-12dbc100-ca9d-11eb-9b7b-0b18077c6741.gif" alt="Home Page" height="400"/>
+<img src="https://user-images.githubusercontent.com/39159676/121691156-10796700-ca9d-11eb-86c5-1b6621e1c594.jpeg" alt="Image Tracking List" height="500"/> <img src="https://user-images.githubusercontent.com/39159676/121691162-11aa9400-ca9d-11eb-95e7-f92cef32cca7.jpeg" alt="Home Page" height="500"/> <img src="https://user-images.githubusercontent.com/39159676/121691166-12432a80-ca9d-11eb-880f-9e822d5c88f6.jpeg" alt="Image Tracking List" height="500"/> 
 </p>
--
+
+
+https://user-images.githubusercontent.com/39159676/121697937-ea0afa00-caa3-11eb-91f5-ecc9293d552d.mp4
+
 
 #### Drawer
 
 <p align="center">
-  
-<img src="https://user-images.githubusercontent.com/39159676/121691682-a90fe700-ca9d-11eb-948f-f5e212f8d1c4.jpeg" alt="Graph Data Image" height="400"/><img src="https://user-images.githubusercontent.com/39159676/121691689-aa411400-ca9d-11eb-9aff-31f980e1e07d.jpeg" alt="Graph Data Image" height="400"/>
+<img src="https://user-images.githubusercontent.com/39159676/121691682-a90fe700-ca9d-11eb-948f-f5e212f8d1c4.jpeg" alt="Graph Data Image" height="500"/> <img src="https://user-images.githubusercontent.com/39159676/121691689-aa411400-ca9d-11eb-9aff-31f980e1e07d.jpeg" alt="Graph Data Image" height="500"/>
+</p>
+
+
+## User is not logged on
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/39159676/121692909-f6d91f00-ca9e-11eb-922f-430477506e6e.jpeg" alt="Graph Data Image" height="500"/> <img src="https://user-images.githubusercontent.com/39159676/121692911-f771b580-ca9e-11eb-979b-a4ede7f818e5.jpeg" alt="Graph Data Image" height="500"/>
 </p>
 -
+
+## Cart Screen
+
+<p align="center"><img src="https://user-images.githubusercontent.com/39159676/121694171-3fdda300-caa0-11eb-8c2a-be8d70e27b73.jpeg" alt="Graph Data Image" height="400"/></p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/39159676/121694169-3eac7600-caa0-11eb-8fe7-7abe5ec7657e.jpeg" alt="Graph Data Image" width="500" height="300"/> <img src="https://user-images.githubusercontent.com/39159676/121694174-410ed000-caa0-11eb-9311-d5cc7ca728f1.jpeg" alt="Graph Data Image" width=450" height="300"/></p>
+<p align="center"> <img src="https://user-images.githubusercontent.com/39159676/121694173-40763980-caa0-11eb-9ece-26bda659dd4e.jpeg" alt="Graph Data Image" height="400" width="450"/> </p>
+
+
+## Order Screen
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/39159676/121696338-5ab11700-caa2-11eb-813f-1083093ef592.jpeg" alt="Graph Data Image" height="500"/>
+</p>
+  
+https://user-images.githubusercontent.com/39159676/121696753-c5fae900-caa2-11eb-9fcd-c9c0d162a429.mp4
+
 
 ### Technologies
 
 - Flutter
 
 
-
-
-
-
 ### API CEP
 
-- https://disease.sh
+- https://viacep.com.br
 
-[Back To The Top](#covid-19-tracking-app)
+[Back To The Top](#vitual-store-flutter)
 
 ---
 
@@ -76,4 +95,4 @@ This project is a simple API application that receives updated corona virus tack
 
 - Linkedin - [Arthur Nunes](https://www.linkedin.com/in/arthurrsn/)
 
-[Back To The Top](#covid-19-tracking-app)
+[Back To The Top](#vitual-store-flutter)
