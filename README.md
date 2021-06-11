@@ -17,8 +17,8 @@ This project is a simple API application that receives updated corona virus tack
 #### Introduction
 
 <p align="center">
-<img src="https://user-images.githubusercontent.com/39159676/121691156-10796700-ca9d-11eb-86c5-1b6621e1c594.jpeg" alt="Image Tracking List" height="400"/> <img src="https://user-images.githubusercontent.com/39159676/121691162-11aa9400-ca9d-11eb-95e7-f92cef32cca7.jpeg" alt="Home Page" height="400"/><img src="https://user-images.githubusercontent.com/39159676/121691166-12432a80-ca9d-11eb-880f-9e822d5c88f6.jpeg" alt="Image Tracking List" height="400"/> 
-<img src="https://user-images.githubusercontent.com/39159676/121691167-12dbc100-ca9d-11eb-9b7b-0b18077c6741.mp4" alt="Home Page" height="400"/>
+<img src="https://user-images.githubusercontent.com/39159676/121691156-10796700-ca9d-11eb-86c5-1b6621e1c594.jpeg" alt="Image Tracking List" height="400"/> <img src="https://user-images.githubusercontent.com/39159676/121691162-11aa9400-ca9d-11eb-95e7-f92cef32cca7.jpeg" alt="Home Page" height="400"/> <img src="https://user-images.githubusercontent.com/39159676/121691166-12432a80-ca9d-11eb-880f-9e822d5c88f6.jpeg" alt="Image Tracking List" height="400"/> 
+<img src="https://user-images.githubusercontent.com/39159676/121691167-12dbc100-ca9d-11eb-9b7b-0b18077c6741.gif" alt="Home Page" height="400"/>
 </p>
 -
 
@@ -33,6 +33,11 @@ This project is a simple API application that receives updated corona virus tack
 ### Technologies
 
 - Flutter
+
+
+
+
+
 
 ### API CEP
 
