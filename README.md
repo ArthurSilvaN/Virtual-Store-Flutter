@@ -53,14 +53,17 @@ https://user-images.githubusercontent.com/39159676/121697937-ea0afa00-caa3-11eb-
 https://user-images.githubusercontent.com/39159676/121696753-c5fae900-caa2-11eb-9fcd-c9c0d162a429.mp4
 
 
-### Technologies
+## Technologies
 
 - Flutter
+  
+### How to Execute
 
 
-### API CEP
-
-- https://viacep.com.br
+```
+  flutter doctor
+  flutter run
+```
 
 [Back To The Top](#virtual-store-flutter)
 
@@ -88,7 +91,11 @@ https://user-images.githubusercontent.com/39159676/121696753-c5fae900-caa2-11eb-
   http: ^0.12.0+2
   correios_frete: ^0.0.1
 ```
+  
+#### API CEP
 
+- https://viacep.com.br
+  
 ---
 
 ## Author Info
